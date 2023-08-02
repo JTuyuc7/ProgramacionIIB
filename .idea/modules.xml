@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PIIB/PIIB.iml" filepath="$PROJECT_DIR$/PIIB/PIIB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrimerParcial/PrimerParcial.iml" filepath="$PROJECT_DIR$/PrimerParcial/PrimerParcial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ProgramacionIIB.iml" filepath="$PROJECT_DIR$/.idea/ProgramacionIIB.iml" />
+    </modules>
+  </component>
+</project>
