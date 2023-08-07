@@ -73,7 +73,7 @@ public class MetodosMatematicos {
             System.out.println("No se puede dividir por 0");
         }else {
             resultado =  num1 / num2;
-            System.out.print("La division de los numeros es: " + resultado+ "\n");
+            System.out.print("La division de los numeros es: " + String.format("%.2f", resultado)+ "\n");
         }
 
     }
