@@ -1,6 +1,10 @@
 package piib;
 
 import java.util.Scanner;
+/*
+    ? Continuacion del proyecto calculadore aritmetica, complementar el ejercicio con metodos en Java.
+
+ */
 
 public class CalculadoraConMetodos {
     public static void main(String[] args) {
