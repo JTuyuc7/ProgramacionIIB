@@ -2,6 +2,8 @@ package ProyectoConcesionaria;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -54,39 +56,50 @@ public class Utils {
     }
 
     public void headerBox(){
-        boxFormating("_", 120);
+        boxFormating("_", 145);
         formatMsg("| Codigo del Producto", 22, false);
         formatMsg(" Nombre del Producto",23, false);
         formatMsg(" Cantidad en Existencia",23, false);
         formatMsg(" Precio Unitario", 18, false);
-        formatMsg(" Total", 30, true);
-        boxFormating("_", 120);
+        formatMsg(" Total", 30, false);
+        formatMsg(" Ultima modificacion", 24, true);
+        boxFormating("_", 145);
     }
 
-    public void bodyBox(String codigo_producto, String nombre_producto, Integer unidades, Float precio, Float total){
+    public void bodyBox(String codigo_producto, String nombre_producto, Integer unidades, Float precio, Float total, String date){
         formatMsg("| " + codigo_producto, 22, false);
         formatMsg(" "+nombre_producto.replace("-", " "),23, false);
         formatMsg(" "+ unidades,23, false);
         formatMsg(" " + precio, 18, false);
-        formatMsg(" "+ total, 30, true);
+        formatMsg(" "+ total, 30, false);
+        formatMsg(" "+ date.replace("-", " "), 24, true);
     }
 
     public void footerBox(Float unidadades_totales, Float cantidad_total){
-        boxFormating("_", 120);
+        boxFormating("_", 145);
         formatMsg("| ", 22, false);
         formatMsg(" ",23, false);
         formatMsg(" "+ unidadades_totales,23, false);
         formatMsg(" " , 18, false);
-        formatMsg(" "+ cantidad_total+ " Gran Total", 30, true);
-        boxFormating("_", 120);
+        formatMsg(" "+ cantidad_total+ " Gran Total", 30, false);
+        formatMsg(" ", 24, true);
+        boxFormating("_", 145);
+    }
+
+    public String dateTimeInfo(){
+        LocalDateTime myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        String formattedDate = myDateObj.format(myFormatObj);
+        return formattedDate.replace(" ", "-");
     }
 
     public ProductType getFieldsProducts(String product){
         List<String> myList = new ArrayList<>(Arrays.asList(product.split(" ")));
         String codigo_producto = myList.get(0);
         String nombre_producto = myList.get(1);
-        int unidades = Integer.parseInt(myList.get(myList.size() - 2));
-        float precio = Float.parseFloat(myList.get(myList.size() - 1));
+        int unidades = Integer.parseInt(myList.get(myList.size() - 3));
+        float precio = Float.parseFloat(myList.get(myList.size() - 2));
+        String date_data = myList.get(myList.size() -1);
         float total = unidades * precio;
 
         ProductType single_product = new ProductType();
@@ -95,6 +108,7 @@ public class Utils {
         single_product.unidadesProductoData = unidades;
         single_product.precioProducto = precio;
         single_product.totalProductPrice = total;
+        single_product.date = date_data;
         return single_product;
     }
 
@@ -105,5 +119,6 @@ public class Utils {
         public Float precioProducto;
         public Float totalProductPrice;
 
+        public String date;
     }
 }

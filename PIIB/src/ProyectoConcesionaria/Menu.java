@@ -1,5 +1,6 @@
 package ProyectoConcesionaria;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -12,10 +13,10 @@ public class Menu {
     public Integer opcionesMenu(){
         utils.boxFormating("*", 65);
         utils.formatMsg("| Selecciona una opcion para continuar", 65, true);
-        utils.formatMsg("| 1 - Registrar Producto", 65, true);
-        utils.formatMsg("| 2 - Mostrar Inventario", 65, true);
-        utils.formatMsg("| 3 - Ingresar Producto", 65, true);
-        utils.formatMsg("| 4 - Extraer producto", 65, true);
+        utils.formatMsg("| 1 - Registrar producto en el inventario", 65, true);
+        utils.formatMsg("| 2 - Mostrar productos del inventario", 65, true);
+        utils.formatMsg("| 3 - Ingresar Producto al inventario", 65, true);
+        utils.formatMsg("| 4 - Extraer producto del inventario", 65, true);
         utils.formatMsg("| 5 - Salir", 65, true);
         utils.boxFormating("*", 65);
         opcion_menu_principal = sc.nextInt();

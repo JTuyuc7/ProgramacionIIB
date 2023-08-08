@@ -24,7 +24,7 @@ public class LeerInventario {
             for (String single_product : proudctos) {
                 unidadades_totales += utils.getFieldsProducts(single_product).unidadesProductoData;
                 cantidad_total += utils.getFieldsProducts(single_product).totalProductPrice;
-                utils.bodyBox(utils.getFieldsProducts(single_product).codigoProducto, utils.getFieldsProducts(single_product).nombreProducto, utils.getFieldsProducts(single_product).unidadesProductoData, utils.getFieldsProducts(single_product).precioProducto, utils.getFieldsProducts(single_product).totalProductPrice);
+                utils.bodyBox(utils.getFieldsProducts(single_product).codigoProducto, utils.getFieldsProducts(single_product).nombreProducto, utils.getFieldsProducts(single_product).unidadesProductoData, utils.getFieldsProducts(single_product).precioProducto, utils.getFieldsProducts(single_product).totalProductPrice, utils.getFieldsProducts(single_product).date);
             }
             utils.footerBox(unidadades_totales, cantidad_total);
         }
