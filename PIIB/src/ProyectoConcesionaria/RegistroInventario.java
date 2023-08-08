@@ -1,6 +1,8 @@
 package ProyectoConcesionaria;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -77,8 +79,9 @@ public class RegistroInventario {
 
         }while (precio_unitario.length() == 0 || !precio_unitario.matches(regex) || Integer.parseInt(precio_unitario) == 0);
 
+        String date = utils.dateTimeInfo();
         //TODO: para actualizar o eliminar ver si es necesario separar los registros por comas o por algun otro elemento
-        datos_nuevo_registro = code_with_no_spaces + " " + transformed + " " + cantidad_producto + " " + precio_unitario + "\n";
+        datos_nuevo_registro = code_with_no_spaces + " " + transformed + " " + cantidad_producto + " " + precio_unitario + " " + date + "\n";
         try {
             FileWriter registro = new FileWriter(fileName, true);
             registro.write(datos_nuevo_registro);
