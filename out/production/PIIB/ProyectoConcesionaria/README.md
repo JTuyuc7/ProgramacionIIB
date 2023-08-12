@@ -13,6 +13,8 @@
 * ExtraerProductoInventario - Archivo que contiene la logica de restar la cantidad al producto mediante su codigo, este contiene la logica de no poder restar (extraer) la cantidad mayor a la que se tiene en existencia.
 * Utils - Archivo de utilidades donde se tienen metodos que se reutilizan en distintos archivos, como darle formato al menu de opciones, formato a la tabla de registros etc.
 
+Se agrego la columna y logica para mostrar la fecha de creacion/modificacion
+
 #### Para Poder ejecutar la applicacion
 * En el archivo ```Main``` Se debe proporcionar un ```Path``` que es donde de almacenaran los registros, este puede estar en cualquier parte del ordenador, pero debe cumplir con este formato ```"C:\\MiUser\\MiCompu\\Desktop\\MiEquipo\\proyectos\\miCarpeta\\inventario.txt"```
 * Se debe ejecutar el archivo principal ```Main``` y este llamara los diferentes metodos en los distintos archivos.
