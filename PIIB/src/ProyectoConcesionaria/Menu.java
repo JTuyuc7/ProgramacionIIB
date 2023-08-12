@@ -17,7 +17,8 @@ public class Menu {
         utils.formatMsg("| 2 - Mostrar productos del inventario", 65, true);
         utils.formatMsg("| 3 - Ingresar Producto al inventario", 65, true);
         utils.formatMsg("| 4 - Extraer producto del inventario", 65, true);
-        utils.formatMsg("| 5 - Salir", 65, true);
+        utils.formatMsg("| 5 - Crear respaldo de datos", 65, true);
+        utils.formatMsg("| 6 - Salir", 65, true);
         utils.boxFormating("*", 65);
         opcion_menu_principal = sc.nextInt();
         return  opcion_menu_principal;

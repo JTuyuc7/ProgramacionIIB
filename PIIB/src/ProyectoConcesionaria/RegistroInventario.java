@@ -77,7 +77,7 @@ public class RegistroInventario {
                 System.out.println("El precio no puede ser 0");
             }
 
-        }while (precio_unitario.length() == 0 || !precio_unitario.matches(regex) || Integer.parseInt(precio_unitario) == 0);
+        }while (precio_unitario.isEmpty() || !precio_unitario.matches(regex) || Integer.parseInt(precio_unitario) == 0);
 
         String date = utils.dateTimeInfo();
         //TODO: para actualizar o eliminar ver si es necesario separar los registros por comas o por algun otro elemento
@@ -86,7 +86,9 @@ public class RegistroInventario {
             FileWriter registro = new FileWriter(fileName, true);
             registro.write(datos_nuevo_registro);
             registro.close();
-            System.out.println("Producto guardado cxitosamente");
+            utils.boxFormating("-", 65);
+            utils.formatMsg("| Producto guardado cxitosamente", 65, true);
+            utils.boxFormating("-", 65);
         }catch (IOException e){
             System.out.println("No se pudo crear el registro :(");
             e.printStackTrace();

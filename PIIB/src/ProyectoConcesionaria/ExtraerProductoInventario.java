@@ -58,7 +58,7 @@ public class ExtraerProductoInventario {
                 }
 
             }
-            System.out.println(temp_product_code);
+//            System.out.println(temp_product_code);
             if( temp_products_non_matches.size() == products.size()){
                 utils.emptyDataList("| Lo siento, producto no existe");
             }else {

@@ -17,7 +17,7 @@ public class LeerInventario {
         //? Productos
         proudctos = utils.openData(filePath);
 
-        if(proudctos.size() == 0){
+        if(proudctos.isEmpty()){
             utils.emptyDataList("| Lo siento!!! No hay productos ");
         }else {
             utils.headerBox();
